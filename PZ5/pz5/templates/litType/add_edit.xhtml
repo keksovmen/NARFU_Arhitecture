@@ -1,0 +1,15 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">LiteratyreType actions</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="createView">
+    <py:if test="'idName' in vars() or 'idName' in globals()">
+        ${form.display(value=dict(idName=idName, typeName=typeName))}
+    </py:if><py:else>
+        ${form.display()}
+    </py:else>
+</div>
+</body>
+</html>

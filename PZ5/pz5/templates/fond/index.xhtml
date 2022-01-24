@@ -1,0 +1,52 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">Fond view</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="totalView">
+    <h1>Fond view</h1>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Library ID</th>
+                <th>Name</th>
+                <th>Books</th>
+                <th>Magazines</th>
+                <th>Papers</th>
+                <th>Dictinaries</th>
+                <th>Dissertations</th>
+                <th>Referats</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <py:for each="d in fonds">
+                <tr>
+                    <td>${d.fondId}</td>
+                    <td>${d.libId}</td>
+                    <td>${d.name}</td>
+                    <td>${d.books}</td>
+                    <td>${d.magazines}</td>
+                    <td>${d.papers}</td>
+                    <td>${d.dictinaries}</td>
+                    <td>${d.dissertations}</td>
+                    <td>${d.referats}</td>
+                    <td>
+                        <p><a href="/fond/showEdit?fondId=${d.fondId}">edit</a>
+                            <a href="/fond/delete?fondId=${d.fondId}">delete</a></p>
+                    </td>
+                </tr>
+            </py:for>
+            </tbody>
+        </table>
+    </div>
+    <div class="create">
+        <a href="/fond/showCreate">Create</a>
+    </div>
+</div>
+
+</body>
+</html>

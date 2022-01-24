@@ -1,0 +1,17 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">Stuff actions</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="createView">
+    <py:if test="'stuffId' in vars() or 'stuffId' in globals()">
+        ${form.display(value=dict(stuffId=stuffId, lastName=lastName, position=position, education=education,
+				  salary=salary, birthDate=birthDate, hireDate=hireDate,
+				  libId=libId))}
+    </py:if><py:else>
+        ${form.display()}
+    </py:else>
+</div>
+</body>
+</html>

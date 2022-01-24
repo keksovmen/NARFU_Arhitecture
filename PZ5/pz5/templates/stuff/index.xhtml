@@ -1,0 +1,50 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">Stuff view</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="totalView">
+    <h1>Stuff view</h1>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Library ID</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Education</th>
+                <th>Salary</th>
+                <th>Birth date</th>
+                <th>Hire date</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <py:for each="d in stuff">
+                <tr>
+                    <td>${d.stuffId}</td>
+                    <td>${d.libId}</td>
+                    <td>${d.lastName}</td>
+                    <td>${d.position}</td>
+                    <td>${d.education}</td>
+                    <td>${d.salary}</td>
+                    <td>${d.birthDate}</td>
+                    <td>${d.hireDate}</td>
+                    <td>
+                        <p><a href="/stuff/showEdit?stuffId=${d.stuffId}">edit</a>
+                            <a href="/stuff/delete?stuffId=${d.stuffId}">delete</a></p>
+                    </td>
+                </tr>
+            </py:for>
+            </tbody>
+        </table>
+    </div>
+    <div class="create">
+        <a href="/stuff/showCreate">Create</a>
+    </div>
+</div>
+
+</body>
+</html>

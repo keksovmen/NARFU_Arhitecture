@@ -1,0 +1,36 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">LiteratyreType view</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="totalView">
+    <h1>LiteratyreType view</h1>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <py:for each="t in types">
+                <tr>
+                    <td>${t.typeName}</td>
+                    <td>
+                        <p><a href="/litType/showEdit?idName=${t.typeName}">edit</a>
+                            <a href="/litType/delete?idName=${t.typeName}">delete</a></p>
+                    </td>
+                </tr>
+            </py:for>
+            </tbody>
+        </table>
+    </div>
+    <div class="create">
+        <a href="/litType/showCreate">Create</a>
+    </div>
+</div>
+
+</body>
+</html>

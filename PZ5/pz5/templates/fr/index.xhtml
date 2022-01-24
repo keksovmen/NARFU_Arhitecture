@@ -1,0 +1,52 @@
+<html py:extends="master.xhtml" py:strip="True">
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">FondRefuel view</title>
+</head>
+
+<body py:block="body" py:strip="True">
+<div class="totalView">
+    <h1>FondRefuel view</h1>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fond ID</th>
+                <th>Stuff ID</th>
+                <th>Literatyre Type</th>
+                <th>Srouce</th>
+                <th>Publisher</th>
+                <th>Amount</th>
+                <th>Publish Date</th>
+                <th>Refuel Date</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <py:for each="d in refuels">
+                <tr>
+                    <td>${d.refuelId}</td>
+                    <td>${d.fondId}</td>
+                    <td>${d.stuffId}</td>
+                    <td>${d.litType}</td>
+                    <td>${d.source}</td>
+                    <td>${d.publisher}</td>
+                    <td>${d.amount}</td>
+                    <td>${d.publishDate}</td>
+                    <td>${d.refuelDate}</td>
+                    <td>
+                        <p><a href="/fr/showEdit?refuelId=${d.refuelId}">edit</a>
+                            <a href="/fr/delete?refuelId=${d.refuelId}">delete</a></p>
+                    </td>
+                </tr>
+            </py:for>
+            </tbody>
+        </table>
+    </div>
+    <div class="create">
+        <a href="/fr/showCreate">Create</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+.totalView table {
+    border: 3px solid;
+}
+
+.totalView thead,
+.totalView tbody,
+.totalView tfoot,
+.totalView tr,
+.totalView th,
+.totalView td{
+    border: inherit;
+    text-align: inherit;
+}
+
+.totalView tbody{
+    text-align: center;
+}
+
+.totalView td{
+    min-width: 75px;
+}
+
+.create{
+    margin: 20px;
+    border: 3px solid green;
+    background-color: antiquewhite;
+    display: inline-block;
+    clear: both;
+    min-width: 100px;
+    text-align: center;
+}
+
+.create a{
+    font-size: 20px;
+
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 45px;
+    padding: 35px 30px 36px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer p {
+    margin-bottom: 0;
+    color: #555;
+}

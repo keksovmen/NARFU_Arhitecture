@@ -1,0 +1,4 @@
+recursive-include pz5/public *
+include pz5/public/favicon.ico
+recursive-include pz5/i18n *
+recursive-include pz5/templates *
