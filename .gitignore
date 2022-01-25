@@ -1,4 +1,7 @@
 __pycache__
 tg2env
 *.db
+*.db-journal
 .idea
+*.eggs
+*egg-info

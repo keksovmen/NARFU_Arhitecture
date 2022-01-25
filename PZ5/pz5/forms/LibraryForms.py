@@ -24,10 +24,10 @@ class LibraryEditFields(twf.TableLayout):
 class LibraryCreateForm(twf.Form):
 	child = LibraryCreateFields()
 	action = "create"
-	validator = NotExistance(Library, 'msg', 'address', 'city')
+	validator = NotExistance(Library, 'name', 'address', 'city')
 
 
 class LibraryEditForm(twf.Form):
 	child = LibraryEditFields()
 	action = "edit"
-	validator = NotExistance(Library, 'msg', 'address', 'city')
+	validator = NotExistance(Library, 'name', 'address', 'city')

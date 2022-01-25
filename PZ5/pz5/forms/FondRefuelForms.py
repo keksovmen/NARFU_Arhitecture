@@ -11,7 +11,7 @@ __all__ = ["FondRefuelCreateForm", "FondRefuelEditForm"]
 
 class CreateFields(twf.TableLayout):
 	source = twf.TextField(validator=Pipe(NotEmpty))
-	publisher = twf.TextField(validator=Pipe(NotEmpty, Number), value=0)
+	publisher = twf.TextField(validator=Pipe(NotEmpty), value=0)
 	amount = twf.TextField(validator=Pipe(NotEmpty, Number), value=0)
 	publishDate = twf.CalendarDatePicker(
 		validator=Pipe(NotEmpty, DateConverter(month_style="dmy")))
@@ -31,7 +31,7 @@ class CreateFields(twf.TableLayout):
 class EditFields(twf.TableLayout):
 	refuelId = twf.HiddenField(validator=Pipe(NotEmpty, Number))
 	source = twf.TextField(validator=Pipe(NotEmpty))
-	publisher = twf.TextField(validator=Pipe(NotEmpty, Number), value=0)
+	publisher = twf.TextField(validator=Pipe(NotEmpty), value=0)
 	amount = twf.TextField(validator=Pipe(NotEmpty, Number), value=0)
 	publishDate = twf.CalendarDatePicker(
 		validator=Pipe(NotEmpty, DateConverter(month_style="dmy")))

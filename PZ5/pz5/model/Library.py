@@ -17,7 +17,7 @@ class Library(DeclarativeBase):
 	@staticmethod
 	def checkIsExists(**kwargs):
 		return DBSession.query(Library).\
-			filter(Library.name == kwargs['msg']).\
+			filter(Library.name == kwargs['name']).\
 			filter(Library.address == kwargs['address']).\
 			filter(Library.city == kwargs['city']).\
 				count() != 0
